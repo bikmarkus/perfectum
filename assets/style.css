@@ -1,0 +1,20 @@
+#sidebar{
+	width:10%;
+	height:100%;
+	margin-right:1em;
+	float:left;
+	border-right:solid 3px limegreen;
+}
+li a{
+	display:block;
+	padding: 0.25em 0.5em;
+	text-decoration:none;
+	border:solid 1px limegreen;
+}
+li a:hover{
+	background-color:yellow;
+}
+section{
+	display:block;
+	margin-left:10%;
+}
