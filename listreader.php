@@ -1,12 +1,10 @@
 <?php
 	$listFileName = strtolower($_POST['listname']).'.txt';
 	$itemAr = file('lists/'.$listFileName);
-	echo '<ul>';
 	$itemId=0;
-	$itemControl = '<span class="sortpanel">DEL</span>';
+	$itemControl = '<div class="sortpanel"><button>PRO</button><button>SMD</button><button>REF</button><button>DEL</button></div>';
 	foreach($itemAr as $item)
 	{
-		echo '<li><a href="'.$itemId++.'">'.$item.'</a>'.$itemControl.'</li>';
+		echo '<div class="item"><a href="'.$itemId++.'">'.$item.'</a>'.$itemControl.'</div>';
 	}
-	echo '</ul>';
 ?>

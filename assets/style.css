@@ -18,6 +18,17 @@ section{
 	display:block;
 	margin-left:10%;
 }
-#main ul li{
+#main div.item{
 	width:100%;
+	border:solid 1px limegreen;
+	padding: 0.25em 0;
+}
+#main div.item a{
+	text-decoration:none;
+}
+#main div.sortpanel{
+	float:right;
+}
+#main div.item button:hover {
+	background-color:yellow;
 }
