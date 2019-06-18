@@ -7,7 +7,8 @@ $(document).ready(function(){
 	});
     $("#main").on("click",".sortpanel button",function(){
         var itemId = $(this).parent().parent().attr("data-num");
-        $.post("listwriter.php", {listname : $(this).html(), id : itemId}, function(data){
+	var itemVal = $(this).parent().siblings('a').html();
+        $.post("listwriter.php", {listname : $(this).html(), id : itemId, value : itemVal}, function(data){
             $("#main").html(data);
         });
         return false;
