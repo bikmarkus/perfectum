@@ -5,6 +5,6 @@
 	$itemControl = '<div class="sortpanel"><button>PRO</button><button>SMD</button><button>REF</button><button>DEL</button></div>';
 	foreach($itemAr as $item)
 	{
-		echo '<div class="item" data-num="'.$itemId++.'"><a href="#">'.$item.'</a>'.$itemControl.'</div>';
+		echo '<div class="item" data-list="'.$_POST['listname'].'" data-num="'.$itemId++.'"><a href="#">'.$item.'</a>'.$itemControl.'</div>';
 	}
 ?>
