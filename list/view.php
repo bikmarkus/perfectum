@@ -2,9 +2,9 @@
 <html>
 <head>
 	<title>Perfectum</title>
-	<link rel="stylesheet" href="assets/styles.css" />
-	<script src="assets/jquery.js"></script>
-	<script src="assets/script.js"></script>	
+	<link rel="stylesheet" href="/assets/styles.css" />
+	<script src="/assets/jquery.js"></script>
+	<script src="/assets/script.js"></script>	
 </head>
 
 <body>
@@ -31,11 +31,11 @@
 		<div class="innertube">	
 			<h3>Control panel</h3>
 			<ul>
-				<li><a href="#">Inbox</a></li>
-				<li><a href="#">Next</a></li>
-				<li><a href="#">Projects</a></li>
-				<li><a href="#">Someday</a></li>
-				<li><a href="#">Reference</a></li>
+				<li><a href="/list/inbox">Inbox</a></li>
+				<li><a href="/list/next">Next</a></li>
+				<li><a href="/list/projects">Projects</a></li>
+				<li><a href="/list/someday">Someday</a></li>
+				<li><a href="/list/reference">Reference</a></li>
 			</ul>
 		</div>
 	</nav>

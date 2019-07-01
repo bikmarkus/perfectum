@@ -14,7 +14,7 @@
 	$params = array();
 
 	// Если запрошен любой URL кроме корня сайта
-	if($_SERVER['REQUEST_URI'] != '/perfectum/')
+	if($_SERVER['REQUEST_URI'] != '/')
 	{
 		$url_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 		
@@ -32,6 +32,7 @@
 		{
 			$params[$uri_parts[$i]] = $uri_parts[++$i];
 		}
+		include_once($module.'/controller.php');
 	}
 	else 
 	{
