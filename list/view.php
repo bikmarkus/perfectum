@@ -10,20 +10,23 @@
 <body>
 	<main>			
 		<div class="innertube">
-			<h1>Inbox</h1>
+			<h1><?php echo $_REQUEST['name'];
+			/*echo '<pre>';
+			var_dump($_REQUEST['listItems']);
+			echo '</pre>';*/
+			?></h1>
 		</div>
 		<div class="item-container">
 			<ul class="item-list">
-				<li class="item"><div class="item-row"><span>Task 1</span></div></li>
-				<li class="item"><div class="item-row"><span>Task 2</span></div></li>
-				<li class="item"><div class="item-row"><span>Task 3</span></div></li>
-				<li class="item"><div class="item-row"><span>Task 4</span></div></li>
-				<li class="item"><div class="item-row"><span>Task 5</span></div></li>
-				<li class="item"><div class="item-row"><span>Task 6</span></div></li>
-				<li class="item"><div class="item-row"><span>Task 7</span></div></li>
-				<li class="item"><div class="item-row"><span>Task 8</span></div></li>
-				<li class="item"><div class="item-row"><span>Task 9</span></div></li>
-				<li class="item"><div class="item-row"><span>Task 10</span></div></li>
+				<?php foreach($_REQUEST['listItems'] as $item){ ?>
+				<li class="item">
+					<div class="item-row">
+						<span>
+							<?php echo $item; ?>				
+						</span>
+					</div>
+				</li>
+				<?php } ?>
 			</ul>
 		</div>
 	</main>

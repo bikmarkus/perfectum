@@ -23,24 +23,25 @@
 			
 		// Убираем домен из url:
 		if($uri_parts[0]=='perfectum') array_shift($uri_parts);	
-
-		$module = array_shift($uri_parts); // Получили имя модуля
-		$action = array_shift($uri_parts); // Получили имя действия
-
+		
+		$module_type = array_shift($uri_parts); // Получили имя модуля
+		$module_name = array_shift($uri_parts); // Получили имя действия
+		$_REQUEST['name'] = $module_name;
 		// Получили в $params параметры запроса
 		for($i=0;$i<count($uri_parts);$i++)
 		{
 			$params[$uri_parts[$i]] = $uri_parts[++$i];
 		}
-		include_once($module.'/controller.php');
+		include_once($module_type.'/controller.php');
 	}
 	else 
 	{
-		include_once('list/view.php');
+		$_REQUEST['name'] = 'inbox';
+		include_once('list/controller.php');
 		die();
 	}
-	echo "\$module: $module\n";
-	echo "\$action: $action\n";
+	echo "\$module_type: $module_type\n";
+	echo "\$module_name: $module_name\n";
 	echo "\$params:\n";
 	print_r($params);
 ?>
