@@ -1,4 +1,5 @@
 <?php
+	include_once('redirecter.php');
 /*	echo '<pre>';
 	var_dump($_SERVER['REQUEST_URI']);
 	echo '</pre>';
@@ -24,14 +25,15 @@
 		// Убираем домен из url:
 		if($uri_parts[0]=='perfectum') array_shift($uri_parts);	
 		
-		$module_type = array_shift($uri_parts); // Получили имя модуля
-		$module_name = array_shift($uri_parts); // Получили имя действия
+		$module_type = array_shift($uri_parts); // Получили тип модуля
+		$module_name = array_shift($uri_parts); // Получили имя модуля
 		$_REQUEST['name'] = $module_name;
 		// Получили в $params параметры запроса
 		for($i=0;$i<count($uri_parts);$i++)
 		{
 			$params[$uri_parts[$i]] = $uri_parts[++$i];
 		}
+		$_REQUEST = array_merge($_REQUEST,$params);
 		include_once($module_type.'/controller.php');
 	}
 	else 

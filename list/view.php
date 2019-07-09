@@ -18,12 +18,17 @@
 		</div>
 		<div class="item-container">
 			<ul class="item-list">
-				<?php foreach($_REQUEST['listItems'] as $item){ ?>
+			<?php 
+				$i=0;
+				foreach($_REQUEST['listItems'] as $item){ ?>
 				<li class="item">
 					<div class="item-row">
 						<span>
 							<?php echo $item; ?>				
 						</span>
+						<div class="item-controls">
+							<a href="<?php echo $_SERVER['REQUEST_URI']."/del/".++$i; ?>">DEL</a>
+						</div>
 					</div>
 				</li>
 				<?php } ?>

@@ -82,3 +82,6 @@ nav ul a:hover{
 	height: 100%; 
 	width: 100%; 
 }
+div.item-controls{
+	float:right;
+}

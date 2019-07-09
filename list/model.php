@@ -1,4 +1,4 @@
-﻿<?php
+﻿<?php 
 	function dbCon()
 	{
 		try{
@@ -25,5 +25,11 @@
 			catch(PDOEXception $e){
 				echo "Ошибка выполнения запроса: ". $e->getMessage();
 			}
+	}
+	function delItem()
+	{
+		$listDB = dbCon();
+		$query = "DELETE FROM ".$_REQUEST['name']." WHERE id=".$_REQUEST['del'];
+		$delItem = $listDB->query($query);
 	}
 ?>
