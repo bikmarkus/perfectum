@@ -67,11 +67,11 @@ nav ul {
 	margin: 0;
 	padding: 0;
 }	
-nav ul a {
+nav ul a, nav h4 a {
 	color: rgba(255, 255, 255, 0.5);
 	text-decoration: none;
 }
-nav ul a:hover{
+nav ul a:hover, nav h4 a:hover{
 	color: #fff;
 }		
 /*IE6 fix*/
@@ -84,4 +84,16 @@ nav ul a:hover{
 }
 div.item-controls{
 	float:right;
+}
+form#additem{
+	display:block;
+	margin-left:15px;
+}
+#additem input[type='text']{
+	width:85%;
+	padding:0.5em;
+}
+#additem input[type='submit']{
+	padding:0.5em 1em;
+	margin-left:0.5em;
 }

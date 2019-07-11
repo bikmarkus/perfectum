@@ -8,12 +8,12 @@
 </head>
 
 <body>
-	<main>			
+	<main>
+		<?php if (isset($_REQUEST['listItems'])) { ?>			
 		<div class="innertube">
 			<h1><?php echo $_REQUEST['name'];
 			?></h1>
 		</div>
-		<?php if (isset($_REQUEST['listItems'])) { ?>
 		<div class="item-container">
 			<ul class="item-list">
 			<?php 
