@@ -14,11 +14,12 @@
 		$listDB = dbCon();
 		$query = "SELECT * FROM ".$listName;
 		$listObj = $listDB->query($query);
+		if(!$listObj) return NULL;
 		$listItems = array();
 		try{
 			while($listArr=$listObj->fetch())
 				{
-					$listItems[] = $listArr['item_text'];
+					$listItems[$listArr["id"]] = $listArr['item_text'];
 				}
 			return $listItems;
 			}

@@ -5,10 +5,10 @@
 		delItem();
 		redirect('/list/'.$_REQUEST["name"]);
 	}
+	if($_REQUEST['name']=='add')
+	{
+		echo 'Hello';
+	}
 	$_REQUEST['listItems'] = getListContent($_REQUEST['name']);
 	include_once('view.php');
-    /*echo '<pre>';
-    var_dump($_SERVER['REQUEST_URI']);
-	var_dump($_REQUEST);
-    echo '</pre>';*/
 ?>

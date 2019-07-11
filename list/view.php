@@ -11,29 +11,29 @@
 	<main>			
 		<div class="innertube">
 			<h1><?php echo $_REQUEST['name'];
-			/*echo '<pre>';
-			var_dump($_REQUEST['listItems']);
-			echo '</pre>';*/
 			?></h1>
 		</div>
+		<?php if (isset($_REQUEST['listItems'])) { ?>
 		<div class="item-container">
 			<ul class="item-list">
 			<?php 
-				$i=0;
-				foreach($_REQUEST['listItems'] as $item){ ?>
+				foreach($_REQUEST['listItems'] as $id => $item){ ?>
 				<li class="item">
 					<div class="item-row">
 						<span>
 							<?php echo $item; ?>				
 						</span>
 						<div class="item-controls">
-							<a href="<?php echo $_SERVER['REQUEST_URI']."/del/".++$i; ?>">DEL</a>
+							<a href="<?php echo $_SERVER['REQUEST_URI']."/del/".$id; ?>">DEL</a>
 						</div>
 					</div>
 				</li>
 				<?php } ?>
 			</ul>
 		</div>
+		<?php } else {
+				include_once('addform.php');	
+		} ?>
 	</main>
 	<nav id="nav">
 		<div class="innertube">	
@@ -45,6 +45,7 @@
 				<li><a href="/list/someday">Someday</a></li>
 				<li><a href="/list/reference">Reference</a></li>
 			</ul>
+			<h4><a href="/list/add">Add new item</a></h4>
 		</div>
 	</nav>
 </body>
