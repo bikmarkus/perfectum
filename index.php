@@ -1,9 +1,6 @@
 <?php
 	include_once('redirecter.php');
-/*	echo '<pre>';
-	var_dump($_SERVER['REQUEST_URI']);
-	echo '</pre>';
-*/
+
 	error_reporting(E_ALL);
 	ini_set('display_errors',1);
 	

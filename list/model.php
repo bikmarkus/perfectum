@@ -33,4 +33,10 @@
 		$query = "DELETE FROM ".$_REQUEST['name']." WHERE id=".$_REQUEST['del'];
 		$delItem = $listDB->query($query);
 	}
+	function addItem()
+	{
+		$listDB = dbCon();
+		$query = "INSERT INTO `".$_REQUEST['name']."` (`id`, `item_text`) VALUES (NULL, '".$_REQUEST['itemtext']."');";
+		$addItem = $listDB->query($query);
+	}
 ?>
