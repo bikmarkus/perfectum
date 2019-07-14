@@ -97,3 +97,19 @@ form#additem{
 	padding:0.5em 1em;
 	margin-left:0.5em;
 }
+#addproject input[type="text"],
+#addproject textarea{
+	display:block;
+	width:85%;
+	padding:0.5em;
+	margin:10px 0;
+}
+#addproject textarea{
+	height:150px;
+}
+form#addproject{
+	margin-left:15px;
+}
+#addproject input[type='submit']{
+	padding:0.5em 1em;
+}

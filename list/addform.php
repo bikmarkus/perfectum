@@ -1,5 +1,5 @@
 <div class="innertube">
-	<h1>Add new item</h1>               
+	<h1>Add new list item</h1>               
 </div>
 
 <form action="/list/controller.php" method="POST" id="additem">
