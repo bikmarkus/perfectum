@@ -41,7 +41,7 @@
 			<ul>
 				<li><a href="/list/inbox">Inbox</a></li>
 				<li><a href="/list/next">Next</a></li>
-				<li><a href="/list/projects">Projects</a></li>
+				<li><a href="/project/projects">Projects</a></li>
 				<li><a href="/list/someday">Someday</a></li>
 				<li><a href="/list/reference">Reference</a></li>
 			</ul>

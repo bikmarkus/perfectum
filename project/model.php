@@ -19,7 +19,7 @@
 		try{
 			while($listArr=$listObj->fetch())
 				{
-					$listItems[$listArr["id"]] = $listArr['item_text'];
+					$listItems[$listArr["id"]] = $listArr["project_title"];
 				}
 			return $listItems;
 			}
@@ -36,7 +36,7 @@
 	function addItem()
 	{
 		$listDB = dbCon();
-		$query = "INSERT INTO `".$_REQUEST['name']."` (`id`, `item_text`) VALUES (NULL, '".$_REQUEST['itemtext']."');";
+		$query = "INSERT INTO `projects` (`id`, `project_title`,`project_description`, `next_item`) VALUES (NULL, '".$_REQUEST['project_title']."', '".$_REQUEST['project_description']."', '".$_REQUEST['next_item']."');";
 		$addItem = $listDB->query($query);
 	}
 ?>

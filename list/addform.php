@@ -9,7 +9,6 @@
 	<p>
 		<input name="listpicker" type="radio" checked value="inbox">Inbox
 		<input name="listpicker" type="radio" value="next">Next
-		<input name="listpicker" type="radio" value="projects">Projects
 		<input name="listpicker" type="radio" value="someday">Someday
 		<input name="listpicker" type="radio" value="reference">Reference
 	</p>
