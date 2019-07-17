@@ -36,7 +36,10 @@
 	function addItem()
 	{
 		$listDB = dbCon();
-		$query = "INSERT INTO `projects` (`id`, `project_title`,`project_description`, `next_item`) VALUES (NULL, '".$_REQUEST['project_title']."', '".$_REQUEST['project_description']."', '".$_REQUEST['next_item']."');";
+		// Вставляем СКД в таблицу next
+		$query = "INSERT INTO `next` (`id`, `item_text`) VALUES (NULL, '".$_REQUEST['next_item']."');";
+		// Вставляем СКД в таблицу projects
+		$query .= "INSERT INTO `projects` (`id`, `project_title`,`project_description`, `next_item`) VALUES (NULL, '".$_REQUEST['project_title']."', '".$_REQUEST['project_description']."', '".$_REQUEST['next_item']."');";
 		$addItem = $listDB->query($query);
 	}
 ?>
