@@ -36,7 +36,7 @@
 	function addItem()
 	{
 		$listDB = dbCon();
-		$query = "INSERT INTO `".$_REQUEST['name']."` (`id`, `item_text`, `item_description`) VALUES (NULL, '".$_REQUEST['itemtext']."','".$_REQUEST['item_description']."');";
+		$query = "INSERT INTO `".$_REQUEST['name']."` (`id`, `item_text`, `item_description`) VALUES (NULL, '".addslashes($_REQUEST['itemtext'])."','".$_REQUEST['item_description']."');";
 		$addItem = $listDB->query($query);
 	}
 ?>

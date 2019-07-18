@@ -21,7 +21,7 @@
 				<li class="item">
 					<div class="item-row">
 						<span>
-							<?php echo $item; ?>				
+							<?php echo '<a href="'.$item.'" target="_blank">'.$item.'</a>'; ?>				
 						</span>
 						<div class="item-controls">
 							<a href="<?php echo $_SERVER['REQUEST_URI']."/del/".$id; ?>">DEL</a>
