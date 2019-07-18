@@ -42,4 +42,35 @@
 		$query .= "INSERT INTO `projects` (`id`, `project_title`,`project_description`, `next_item`) VALUES (NULL, '".$_REQUEST['project_title']."', '".$_REQUEST['project_description']."', '".$_REQUEST['next_item']."');";
 		$addItem = $listDB->query($query);
 	}
+	function updateProject()
+	{
+		$projDB = dbCon();
+		//var_dump($_REQUEST);die();
+		$query = "UPDATE `projects` 
+				   SET `project_title`= '".$_REQUEST['project_title']."',
+				   `project_description`= '".$_REQUEST['project_description']."',
+				   `next_item`= '".$_REQUEST['next_item']."'
+				   WHERE `id`='".$_REQUEST['id']."';";
+		$updProject = $projDB->query($query);
+	}
+	function getProjectContent()
+	{
+		$projDB = dbCon();
+		$query = "SELECT * FROM projects WHERE id=".$_REQUEST['edit'];
+		$projObj = $projDB->query($query);
+		$projectDets = array();
+		try{
+			while($proArr=$projObj->fetch())
+				{
+					$projectDets = array("id" => $proArr["id"],
+										 "title" => $proArr["project_title"],
+										 "description" => $proArr["project_description"],
+										 "next" => $proArr["next_item"]);
+				}
+			return $projectDets;
+			}
+			catch(PDOEXception $e){
+				echo "Ошибка выполнения запроса: ". $e->getMessage();
+			}
+	}
 ?>

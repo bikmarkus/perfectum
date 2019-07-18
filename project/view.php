@@ -24,6 +24,7 @@
 							<?php echo $item; ?>				
 						</span>
 						<div class="item-controls">
+							<a href="<?php echo $_SERVER['REQUEST_URI']."/edit/".$id; ?>">EDIT</a>
 							<a href="<?php echo $_SERVER['REQUEST_URI']."/del/".$id; ?>">DEL</a>
 						</div>
 					</div>
@@ -31,7 +32,11 @@
 				<?php } ?>
 			</ul>
 		</div>
-		<?php } else {
+		<?php } elseif(isset($_REQUEST['edit']))
+				{
+					include_once('editform.php');
+				}
+				else {
 				include_once('addform.php');	
 		} ?>
 	</main>
