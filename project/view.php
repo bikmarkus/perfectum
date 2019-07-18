@@ -43,10 +43,11 @@
 				<li><a href="/list/next">Next</a></li>
 				<li><a href="/project/projects">Projects</a></li>
 				<li><a href="/list/someday">Someday</a></li>
-				<li><a href="/list/reference">Reference</a></li>
+				<li><a href="/reference/reference">Reference</a></li>
 			</ul>
 			<h4><a href="/list/add">Add new list item</a></h4>
 			<h4><a href="/project/add">Add new project</a></h4>
+			<h4><a href="/reference/add">Add new reference</a></h4>
 		</div>
 	</nav>
 </body>

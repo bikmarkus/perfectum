@@ -36,7 +36,7 @@
 		} ?>
 	</main>
 	<nav id="nav">
-		<div class="innertube">	
+		<div class="innertube">
 			<h3>Control panel</h3>
 			<ul>
 				<li><a href="/list/inbox">Inbox</a></li>

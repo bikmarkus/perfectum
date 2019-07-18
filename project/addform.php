@@ -1,7 +1,6 @@
 ﻿<div class="innertube">
-	<h1>Add new project</h1>           
+	<h1>Add new project</h1>
 </div>
-
 <form action="/project/controller.php" method="POST" id="addproject">
 	<input type="hidden" name="add">
 	<input type="text" placeholder="Add project name here..." name="project_title">

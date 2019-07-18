@@ -39,9 +39,5 @@
 		include_once('list/controller.php');
 		die();
 	}
-	echo "\$module_type: $module_type\n";
-	echo "\$module_name: $module_name\n";
-	echo "\$params:\n";
-	print_r($params);
 ?>
 

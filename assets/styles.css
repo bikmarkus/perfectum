@@ -113,3 +113,19 @@ form#addproject{
 #addproject input[type='submit']{
 	padding:0.5em 1em;
 }
+#addreference input[type="text"],
+#addreference textarea{
+	display:block;
+	width:85%;
+	padding:0.5em;
+	margin:10px 0;
+}
+#addreference textarea{
+	height:250px;
+}
+form#addreference{
+	margin-left:15px;
+}
+#addreference input[type='submit']{
+	padding:0.5em 1em;
+}
