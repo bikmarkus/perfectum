@@ -30,7 +30,15 @@
 	function delItem()
 	{
 		$listDB = dbCon();
-		$query = "DELETE FROM ".$_REQUEST['name']." WHERE id=".$_REQUEST['del'];
+		// Удаляем запись из таблицы СКД
+		// Получаем id СКД
+		$query = "SELECT `next_item_id` FROM `projects` WHERE `id`='".$_REQUEST['del']."';";
+		$nextItemObj = $listDB->query($query);
+		$nextItem=$nextItemObj->fetch();
+		// Удаляем запись из таблицы СКД
+		$query = "DELETE FROM `next` WHERE id='".$nextItem['next_item_id']."';";
+		// Удаляем запись из таблицы проектов.
+		$query .= "DELETE FROM ".$_REQUEST['name']." WHERE id=".$_REQUEST['del'];
 		$delItem = $listDB->query($query);
 	}
 	function addItem()
@@ -38,14 +46,18 @@
 		$listDB = dbCon();
 		// Вставляем СКД в таблицу next
 		$query = "INSERT INTO `next` (`id`, `item_text`) VALUES (NULL, '".$_REQUEST['next_item']."');";
+		$addItem = $listDB->query($query);
+		// Получаем id СКД
+		$query = "SELECT `id` FROM `next` WHERE `item_text`='".$_REQUEST['next_item']."';";
+		$nextItemObj = $listDB->query($query);
+		$nextItem=$nextItemObj->fetch();
 		// Вставляем СКД в таблицу projects
-		$query .= "INSERT INTO `projects` (`id`, `project_title`,`project_description`, `next_item`) VALUES (NULL, '".$_REQUEST['project_title']."', '".$_REQUEST['project_description']."', '".$_REQUEST['next_item']."');";
+		$query = "INSERT INTO `projects` (`id`, `project_title`,`project_description`, `next_item_id`) VALUES (NULL, '".$_REQUEST['project_title']."', '".$_REQUEST['project_description']."', '".$nextItem['id']."');";
 		$addItem = $listDB->query($query);
 	}
 	function updateProject()
 	{
 		$projDB = dbCon();
-		//var_dump($_REQUEST);die();
 		$query = "UPDATE `projects` 
 				   SET `project_title`= '".$_REQUEST['project_title']."',
 				   `project_description`= '".$_REQUEST['project_description']."',
